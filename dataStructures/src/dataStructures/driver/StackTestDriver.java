@@ -45,4 +45,33 @@ public class StackTestDriver {
         if (!stack.isEmpty())
             stack.peek();
     }
+
+    public void ListStackRun() {
+        String line = "";
+        ListStack<Integer> stack = new ListStack<Integer>();
+
+        for (int i = 0; line != null; i++) {
+            try {
+                MyLogger.writeMessage("Reading line...", MyLogger.DebugLevel.IN_RUN);
+                line = filep.readLine();
+
+                if (line == null) break;
+
+                int num = Integer.parseInt(line);
+                stack.push(num);
+            } catch (Exception e) {
+                System.err.println("[Exception Caught]: " + e.getMessage());
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }
+
+        // int size = stack.size();
+        while (!stack.isEmpty()) {
+            results.writeToFile(Integer.toString(stack.pop()));
+        }
+
+        if (!stack.isEmpty())
+            stack.peek();
+    }
 }

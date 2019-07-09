@@ -45,7 +45,7 @@ public class Driver {
             case 1:
                 // Stack test
                 StackTestDriver stackTest = new StackTestDriver(filep, results);
-                stackTest.run();
+                stackTest.ListStackRun();
                 results.dumpToFile();
                 results.closeIO();
 
