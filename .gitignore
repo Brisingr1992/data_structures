@@ -1,0 +1,7 @@
+*.class
+*.txt
+BUILD
+
+#ignore vscode versioning
+/.DS_Store
+src/.DS_Store
