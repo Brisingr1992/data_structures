@@ -7,8 +7,9 @@ import dataStructures.util.FileProcessor;
 
 public class Driver {
     public static void main(String[] args) {
-        if (args.length != 4) {
-            System.err.println("You should provide three args to test.");
+        if (args.length != 4 || args[0].equals("${arg0}") || args[1].equals("${arg1}")
+            || args[2].equals("${arg2}") || args[3].equals("${arg3}")) {
+            System.err.println("You should provide four args to test.");
             System.err.println("(1): -Darg0=<input.txt>");
             System.err.println("(2): -Darg1=put..printlntxt>");
             System.err.println("(3): -Darg2=<data_structure_to_test>");

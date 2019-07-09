@@ -13,8 +13,8 @@ public class Stack implements StackI {
     }
 
     public Stack(int size) {
-        this.size = size == -1 ? DEFAULT_SIZE : size;
-        this.stack = new int[this.size];
+        this.size = 0;
+        this.stack = size > 0 ? new int[size] : new int[DEFAULT_SIZE];
         this.top = -1;
     }
 

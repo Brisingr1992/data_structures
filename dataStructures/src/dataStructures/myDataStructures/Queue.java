@@ -14,8 +14,8 @@ public class Queue implements QueueI {
     }
 
     public Queue(int size) {
-        this.size = size == -1 ? DEFAULT_SIZE : size;;
-        this.queue = new int[this.size];
+        this.size = 0;
+        this.queue = size > 0 ? new int[size] : new int[DEFAULT_SIZE];
         this.head = 0;
         this.tail = 0;
     }
