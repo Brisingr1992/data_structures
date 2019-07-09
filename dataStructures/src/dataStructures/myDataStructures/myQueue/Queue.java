@@ -1,4 +1,4 @@
-package dataStructures.myDataStructures;
+package dataStructures.myDataStructures.myQueue;
 
 import dataStructures.interfaces.QueueI;
 
