@@ -1,4 +1,6 @@
-package dataStructure.myDataStructures;
+package dataStructures.myDataStructures;
+
+import dataStructures.interfaces.StackI;
 
 public class Stack implements StackI {
     private int[] stack;
@@ -7,29 +9,37 @@ public class Stack implements StackI {
     private int DEFAULT_SIZE = 10;
 
     public Stack() {
-        this(DEFAULT_SIZE);
+        this(-1);
     }
 
     public Stack(int size) {
-        this.size = size;
-        this.stack = new int[size];
+        this.size = size == -1 ? DEFAULT_SIZE : size;
+        this.stack = new int[this.size];
         this.top = -1;
     }
 
     public void push(int x) {
         top = top + 1;
 
-        if (top == stack.length)
-            throw new IllegalAccessException("Stack is full.");
-
-        this.stack[top] = x;
+        try {
+            if (top == stack.length)
+                throw new IllegalAccessException("Stack is full.");
+        } catch (IllegalAccessException e) {
+            System.err.println("[Exception Caught]: " + e.getMessage());
+			e.printStackTrace();
+			System.exit(1);
+        } finally {
+            this.stack[top] = x;
+            this.size++;
+        }
     }
 
     public int pop() {
         if (this.isEmpty()) 
             throw new NullPointerException("Stack is empty");
-
+        
         top = top - 1;
+        this.size--;
         return this.stack[top + 1];
     }
 

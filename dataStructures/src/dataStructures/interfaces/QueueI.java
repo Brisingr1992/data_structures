@@ -1,4 +1,4 @@
-package dataStructure.interfaces;
+package dataStructures.interfaces;
 
 public interface QueueI {
     public void add(int x);

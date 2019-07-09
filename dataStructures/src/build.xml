@@ -15,9 +15,9 @@
     <!-- Target for tar-ring folders -->
     <target name="tar">
 	<mkdir dir="${BUILD}/dist"/>
-	<tar destfile="${BUILD}/dist/saushthav_saxena_assign_2.tar" basedir="../" 
+	<tar destfile="${BUILD}/dist/dataStructures.tar" basedir="../" 
 		excludes="**/output.txt, **/BUILD/** "/>
-        <gzip destfile="${BUILD}/dist/saushthav_saxena_assign_2.tar.gz" src="${BUILD}/dist/saushthav_saxena_assign_2.tar" />
+        <gzip destfile="${BUILD}/dist/dataStructures.tar.gz" src="${BUILD}/dist/dataStructures.tar" />
     </target>
 
     <!-- Prepare target directories -->
@@ -61,6 +61,7 @@
             <arg value="${arg0}"/>
             <arg value="${arg1}"/>
             <arg value="${arg2}"/>
+            <arg value="${arg3}"/>
         </java>
     </target>
 </project>
