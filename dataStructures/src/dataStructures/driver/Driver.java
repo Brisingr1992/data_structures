@@ -53,7 +53,8 @@ public class Driver {
             case 2:
                 // Queue test
                 QueueTestDriver queueTest = new QueueTestDriver(filep, results);
-                queueTest.run();
+                MyLogger.writeMessage("Running List Queue...", MyLogger.DebugLevel.IN_RUN);
+                queueTest.LQueueRun();
                 results.dumpToFile();
                 results.closeIO();
 

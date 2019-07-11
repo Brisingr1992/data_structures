@@ -45,4 +45,35 @@ public class QueueTestDriver {
         if (!queue.isEmpty())
             queue.peek();
     }
+
+    public void LQueueRun() {
+        String line = "";
+        LQueue<Integer> queue = new LQueue<Integer>();
+
+        for (int i = 0; line != null; i++) {
+            try {
+                MyLogger.writeMessage("Reading line...", MyLogger.DebugLevel.IN_RUN);
+                line = filep.readLine();
+
+                if (line == null) break;
+
+                int num = Integer.parseInt(line);
+                queue.add(num);
+            } catch (Exception e) {
+                System.err.println("[Exception Caught]: " + e.getMessage());
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }
+
+        // int size = stack.size();
+        while (!queue.isEmpty()) {
+            int temp = queue.poll();
+            results.writeToStdout(Integer.toString(temp));
+            results.writeToFile(Integer.toString(temp));
+        }
+
+        if (!queue.isEmpty())
+            queue.peek();
+    }
 }
